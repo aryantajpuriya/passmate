@@ -1,0 +1,9 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Welcome to Your Password Manager</h2>
+<p><a href="{% url 'add_password' %}">
+    <button>Add New Password</button>
+  </a></p>
+{% endblock %}

@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Password Manager</title>
+</head>
+<body>
+    {% if user.is_authenticated %}
+        <p>Welcome, {{ user.username }} | <form method="POST" action="{% url 'logout' %}">
+            {% csrf_token %}
+            <button type="submit">Logout</button>
+        </form></p>
+    {% else %}
+        <p><a href="{% url 'login' %}">Login</a> | <a href="{% url 'signup' %}">Sign Up</a></p>
+    {% endif %}
+    <hr>
+    {% block content %}{% endblock %}
+</body>
+</html>

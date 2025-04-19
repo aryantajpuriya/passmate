@@ -1,0 +1,11 @@
+<!DOCTYPE html>
+{% extends 'base.html' %}
+{% block content %}
+  <h2>Are you sure you want to delete this password?</h2>
+  <p><strong>{{ entry.website_name }}</strong> - {{ entry.website_url }}</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit">Yes, Delete</button>
+  </form>
+  <a href="{% url 'password_list' %}">Cancel</a>
+{% endblock %}
